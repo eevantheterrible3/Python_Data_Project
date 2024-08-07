@@ -50,12 +50,12 @@ df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
 df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
 ```
 
-## Filter US Jobs
+## Filter Serbia Jobs
 
-To focus my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the United States.
+To focus my analysis on the Serbia job market, I apply filters to the dataset, narrowing down to roles based in Serbia.
 
 ```python
-df_US = df[df['job_country'] == 'United States']
+df_Serbia = df[df['job_country'] == 'Serbia']
 
 ```
 
@@ -92,7 +92,7 @@ plt.show()
 
 - SQL is the most requested skill for Data Analysts and Data Scientists, with it in over half the job postings for both roles. For Data Engineers, Python is the most sought-after skill, appearing in 68% of job postings.
 - Data Engineers require more specialized technical skills (AWS, Azure, Spark) compared to Data Analysts and Data Scientists who are expected to be proficient in more general data management and analysis tools (Excel, Tableau).
-- Python is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists (72%) and Data Engineers (65%).
+- Python is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists (48%) and Data Engineers (60%).
 
 ## 2. How are in-demand skills trending for Data Analysts?
 
@@ -106,7 +106,7 @@ View my notebook with detailed steps here: [3_Skills_Trend](3_Skills_Trend.ipynb
 
 from matplotlib.ticker import PercentFormatter
 
-df_plot = df_DA_US_percent.iloc[:, :5]
+df_plot = df_DA_Serbia_percent.iloc[:, :5]
 sns.lineplot(data=df_plot, dashes=False, legend='full', palette='tab10')
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
@@ -117,24 +117,24 @@ plt.show()
 
 ### Results
 
-![Trending Top Skills for Data Analysts in the US](3_Project/images/trendind_top_skills.png)  
-*Bar graph visualizing the trending top skills for data analysts in the US in 2023.*
+![Trending Top Skills for Data Analysts in Serbia](3_Project/images/trendind_top_skills.png)  
+*Bar graph visualizing the trending top skills for data analysts in Serbia in 2023.*
 
 ### Insights:
-- SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand.
-- Excel experienced a significant increase in demand starting around September, surpassing both Python and Tableau by the end of the year.
+- SQL remains the most demanded skill throughout the year, although it shows a gradual increase in demand at the end of the summer.
+- Excel experienced a significant increase in demand starting around August, surpassing both Python and Tableau by the end of the October, but then it is falling until the end of the year.
 - Both Python and Tableau show relatively stable demand throughout the year with some fluctuations but remain essential skills for data analysts. Power BI, while less demanded compared to the others, shows a slight upward trend towards the year's end.
 
 ## 3. How well do jobs and skills pay for Data Analysts?
 
-To identify the highest-paying roles and skills, I only got jobs in the United States and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most. 
+To identify the highest-paying roles and skills, I only got jobs in Serbia and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most. 
 
 View my notebook with detailed steps here: [4_Salary_Analysis](4_Salary_Analysis.ipynb).
 
 #### Visualize Data 
 
 ```python
-sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
+sns.boxplot(data=df_Serbia_top6, x='salary_year_avg', y='job_title_short', order=job_order)
 
 ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
 plt.gca().xaxis.set_major_formatter(ticks_x)
