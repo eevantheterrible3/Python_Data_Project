@@ -149,11 +149,14 @@ plt.show()
 
 #### Insights
 
-- There's a significant variation in salary ranges across different job titles. Senior Data Scientist positions tend to have the highest salary potential, with up to $600K, indicating the high value placed on advanced data skills and experience in the industry.
+- Top Earners: Software Engineers generally have the highest average salary at around $100K per year.
 
-- Senior Data Engineer and Senior Data Scientist roles show a considerable number of outliers on the higher end of the salary spectrum, suggesting that exceptional skills or circumstances can lead to high pay in these roles. In contrast, Data Analyst roles demonstrate more consistency in salary, with fewer outliers.
 
-- The median salaries increase with the seniority and specialization of the roles. Senior roles (Senior Data Scientist, Senior Data Engineer) not only have higher median salaries but also larger differences in typical salaries, reflecting greater variance in compensation as responsibilities increase.
+- Wide Range: Both Software Engineers and Data Engineers show a wide salary range, indicating that experience and skills can significantly impact earnings.
+
+
+- Consistency: Data Scientists and Machine Learning Engineers tend to have more consistent salaries, with smaller variations.
+
 
 ### Highest Paid & Most Demanded Skills for Data Analysts
 
@@ -176,18 +179,21 @@ plt.show()
 ```
 
 #### Results
-Here's the breakdown of the highest-paid & most in-demand skills for data analysts in the US:
+Here's the breakdown of the highest-paid & most in-demand skills for data analysts in Serbia:
 
 ![The Highest Paid & Most In-Demand Skills for Data Analysts in the US](3_Project/images/highest_paid_skills.png)
 *Two separate bar graphs visualizing the highest paid skills and most in-demand skills for data analysts in Serbia.*
 
 #### Insights:
 
-- The top graph shows specialized technical skills like `dplyr`, `Bitbucket`, and `Gitlab` are associated with higher salaries, some reaching up to $200K, suggesting that advanced technical proficiency can increase earning potential.
+- Top Earning Skills: `SSIS` and `Power BI` skills lead to the highest salaries, with median earnings close to $100K.
+.
 
-- The bottom graph highlights that foundational skills like `Excel`, `PowerPoint`, and `SQL` are the most in-demand, even though they may not offer the highest salaries. This demonstrates the importance of these core skills for employability in data analysis roles.
+- In-Demand Skills: `Power BI` and `SQL` are the most sought-after skills, also leading to high median salaries.
 
-- There's a clear distinction between the skills that are highest paid and those that are most in-demand. Data analysts aiming to maximize their career potential should consider developing a diverse skill set that includes both high-paying specialized skills and widely demanded foundational skills.
+
+- Traditional Tools: `Excel`, while not the highest paid, remains a strong, in-demand skill, highlighting its continued relevance in the field.
+
 
 ## 4. What are the most optimal skills to learn for Data Analysts?
 
@@ -208,51 +214,22 @@ plt.show()
 
 #### Results
 
-![Most Optimal Skills for Data Analysts in the US](3_Project/images/scatter.png)    
-*A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in the US.*
+![Most Optimal Skills for Data Analysts in Serbia](3_Project/images/scatter.png)    
+*A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in Serbia.*
 
 #### Insights:
 
-- The skill `Oracle` appears to have the highest median salary of nearly $97K, despite being less common in job postings. This suggests a high value placed on specialized database skills within the data analyst profession.
+- High Salary & Demand: Skills like `Power BI` and `SQL` not only offer high median salaries (close to $100K) but are also in high demand, with over 60-70% of job postings requiring them.
 
-- More commonly required skills like `Excel` and `SQL` have a large presence in job listings but lower median salaries compared to specialized skills like `Python` and `Tableau`, which not only have higher salaries but are also moderately prevalent in job listings.
 
-- Skills such as `Python`, `Tableau`, and `SQL Server` are towards the higher end of the salary spectrum while also being fairly common in job listings, indicating that proficiency in these tools can lead to good opportunities in data analytics.
+- Top Earning Skills: `SSIS` and `Go` offer top salaries around $100K, though they are required in about 30% of job postings.
 
-### Visualizing Different Techonologies
 
-Let's visualize the different technologies as well in the graph. We'll add color labels based on the technology (e.g., {Programming: Python})
+- Versatile Skills: Skills like `C#`, `Python`, and `Excel`, with median salaries around $80K, are required in approximately 50% of job postings, making them highly versatile.
 
-#### Visualize Data
+In summary, for Data Analysts in Serbia, mastering Power BI and SQL can significantly enhance both earning potential and job opportunities, while skills like SSIS and Go can lead to high salaries even if they are less frequently required.
 
-```python
-from matplotlib.ticker import PercentFormatter
 
-# Create a scatter plot
-scatter = sns.scatterplot(
-    data=df_DA_skills_tech_high_demand,
-    x='skill_percent',
-    y='median_salary',
-    hue='technology',  # Color by technology
-    palette='bright',  # Use a bright palette for distinct colors
-    legend='full'  # Ensure the legend is shown
-)
-plt.show()
-
-```
-
-#### Results
-
-![Most Optimal Skills for Data Analysts in the US with Coloring by Technology](images/Most_Optimal_Skills_for_Data_Analysts_in_the_US_with_Coloring_by_Technology.png)  
-*A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in the US with color labels for technology.*
-
-#### Insights:
-
-- The scatter plot shows that most of the `programming` skills (colored blue) tend to cluster at higher salary levels compared to other categories, indicating that programming expertise might offer greater salary benefits within the data analytics field.
-
-- The database skills (colored orange), such as Oracle and SQL Server, are associated with some of the highest salaries among data analyst tools. This indicates a significant demand and valuation for data management and manipulation expertise in the industry.
-
-- Analyst tools (colored green), including Tableau and Power BI, are prevalent in job postings and offer competitive salaries, showing that visualization and data analysis software are crucial for current data roles. This category not only has good salaries but is also versatile across different types of data tasks.
 
 # What I Learned
 
